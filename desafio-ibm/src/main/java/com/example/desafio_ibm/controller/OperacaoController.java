@@ -1,5 +1,6 @@
 package com.example.desafio_ibm.controller;
 
+import com.example.desafio_ibm.dto.ExtratoDTO;
 import com.example.desafio_ibm.enums.TipoOperacao;
 import com.example.desafio_ibm.model.Operacao;
 import com.example.desafio_ibm.service.OperacaoService;
@@ -21,5 +22,10 @@ public class OperacaoController {
     @PostMapping("/credito")
     public Operacao criarCredito(@RequestParam Long clienteId, @RequestParam double valor) {
         return operacaoService.criarOperacao(clienteId, valor, TipoOperacao.CREDITO);
+    }
+
+    @GetMapping("/{clienteId}/extrato")
+    public ExtratoDTO obterExtrato(@PathVariable Long clienteId) {
+        return operacaoService.obterExtrato(clienteId);
     }
 }
