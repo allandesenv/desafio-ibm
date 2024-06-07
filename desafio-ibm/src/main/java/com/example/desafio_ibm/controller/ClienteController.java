@@ -1,5 +1,6 @@
 package com.example.desafio_ibm.controller;
 
+import com.example.desafio_ibm.dto.ClienteDTO;
 import com.example.desafio_ibm.model.Cliente;
 import com.example.desafio_ibm.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,9 @@ public class ClienteController {
     }
 
     @GetMapping
-    public List<Cliente> listarClientes() {
-        return clienteService.listarClientes();
+    public ResponseEntity<List<ClienteDTO>> listarClientesDTO() {
+        List<ClienteDTO> dtos = clienteService.listarClientesDTO();
+        return ResponseEntity.ok(dtos);
     }
 
     @GetMapping("/{id}")

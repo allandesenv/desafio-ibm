@@ -1,27 +1,13 @@
-package com.example.desafio_ibm.model;
+package com.example.desafio_ibm.dto;
 
 import com.example.desafio_ibm.enums.TipoOperacao;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
-@Entity
-public class Operacao {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class OperacaoDTO {
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    @JsonIgnore
-    private Cliente cliente;
-
     private double valor;
-
-    @Enumerated(EnumType.STRING)
     private TipoOperacao tipo;
-
     private LocalDateTime dataHora;
 
     // Getters e Setters
@@ -31,14 +17,6 @@ public class Operacao {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public double getValor() {
@@ -65,6 +43,4 @@ public class Operacao {
         this.dataHora = dataHora;
     }
 }
-
-
 
