@@ -101,7 +101,7 @@ Para acessar a console do H2, acesse `http://localhost:8080/h2-console` e utiliz
 2. Execute a aplicação:
 
     ```bash
-    mvn spring-boot:run
+    java -jar target/desafio-ibm-0.0.1-SNAPSHOT.jar
     ```
 
 A aplicação estará disponível em `http://localhost:8080`.
