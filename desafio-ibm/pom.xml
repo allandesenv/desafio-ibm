@@ -15,6 +15,7 @@
 	<description>Desafio IBM - Simulação de Transações Financeiras Bancarias</description>
 	<properties>
 		<java.version>17</java.version>
+		<start-class>com.example.desafio_ibm.DesafioIbmApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -49,6 +50,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.example.desafio_ibm.DesafioIbmApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
